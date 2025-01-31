@@ -2,7 +2,7 @@ import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDatabase } from "./mongoose";
 import User from "@/database/user.model";
-import { compare, hash } from "bcrypt";
+import { compare } from "bcrypt";
 
 interface SessionUser {
   username: string;
@@ -28,6 +28,7 @@ export const authOptions: AuthOptions = {
       async authorize(credentials) {
         await connectToDatabase();
         const user = await User.findOne({ username: credentials?.username });
+        console.log(user, "user");
 
         if (user) {
           const isPasswordValid = await compare(
@@ -36,9 +37,7 @@ export const authOptions: AuthOptions = {
           );
 
           if (isPasswordValid) {
-            console.log(user);
-
-            if (!user?.verified) return null;
+            console.log(user, "password is valid");
 
             return user;
           }
