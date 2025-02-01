@@ -26,7 +26,7 @@ import "react-photo-view/dist/react-photo-view.css";
 
 interface PubgSet {
   _id: number;
-  name: string;
+  name: number;
   image: string;
   price: number;
 }
@@ -219,7 +219,7 @@ export default function PubgSetsPage() {
                     src={
                       set.image ? `/uploads/${set.image}` : "/placeholder.svg"
                     }
-                    alt={set.name}
+                    alt={set.name+""}
                     className="w-full h-40 object-cover mb-2"
                   />
                 </PhotoView>
@@ -246,14 +246,15 @@ export default function PubgSetsPage() {
                     <div className="grid gap-4 py-4">
                       <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="edit-name" className="text-right">
-                          Nomi
+                          Soni
                         </Label>
                         <Input
                           id="edit-name"
+                          type="number"
                           value={editingSet?.name}
                           onChange={(e) =>
                             setEditingSet((prev) =>
-                              prev ? { ...prev, name: e.target.value } : null
+                              prev ? { ...prev, name: +e.target.value } : null
                             )
                           }
                           className="col-span-3"

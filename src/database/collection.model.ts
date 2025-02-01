@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const collectionSchema = new mongoose.Schema(
   {
     name: {
-      type: String,
+      type: Number,
       required: true,
-      default: "",
+      default: 0,
     },
     image: {
       type: String,
