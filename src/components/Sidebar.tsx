@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { signOut } from "next-auth/react"
-import { CreditCard, Package, Settings, User, LogOut, Menu } from "lucide-react"
+import { CreditCard, Package, Settings, User, LogOut, Menu, Users } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/pubg-sets", label: "PUBG To'plamlar", icon: Package },
   { href: "/bot-settings", label: "Bot Sozlamalari", icon: Settings },
   { href: "/profile", label: "Profil Sozlamalari", icon: User },
+  { href: "/users", label: "Profil Sozlamalari", icon: Users },
 ]
 
 export default function Sidebar() {
