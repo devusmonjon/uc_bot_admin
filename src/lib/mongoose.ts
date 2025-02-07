@@ -5,9 +5,9 @@ let isConncected: boolean = false;
 export const connectToDatabase = async () => {
   mongoose.set("strictQuery", true);
 
-  if (!process.env.MONGODB_URI) {
+  /*if (!process.env.MONGODB_URI) {
     return console.log("MISSING MONGODB_URI");
-  }
+  }*/
 
   if (isConncected) {
     return;
@@ -18,7 +18,7 @@ export const connectToDatabase = async () => {
       dbName: "uc_bot",
       autoCreate: true,
     };
-    await mongoose.connect(process.env.MONGODB_URI!, options);
+    await mongoose.connect("mongodb://localhost:27017", options);
     isConncected = true;
     console.log("MongoDB is connected");
   } catch (err) {

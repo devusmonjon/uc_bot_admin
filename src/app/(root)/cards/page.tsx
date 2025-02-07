@@ -39,7 +39,7 @@ export default function CardsPage() {
 
   const fetchCards = async () => {
     try {
-      const response = await axios.get("https://adminuc.up-it.uz/api/cards");
+      const response = await axios.get("/api/cards");
       console.log(response.data.data.cards);
       setCards(response.data.data.cards);
     } catch (error) {
@@ -53,7 +53,7 @@ export default function CardsPage() {
 
   const addCard = async () => {
     try {
-        const response = await axios.post("https://adminuc.up-it.uz/api/cards", newCard);
+        const response = await axios.post("/api/cards", newCard);
         setChanger((prev) => !prev);
         if (response) {
             toast({
@@ -74,7 +74,7 @@ export default function CardsPage() {
   const updateCard = async () => {
     if (editingCard) {
       try {
-        await axios.put(`https://adminuc.up-it.uz/api/cards/${editingCard._id}`, editingCard);
+        await axios.put(`/api/cards/${editingCard._id}`, editingCard);
         setChanger((prev) => !prev);
         toast({
           title: "Muvaffaqqiyatli",
@@ -93,7 +93,7 @@ export default function CardsPage() {
 
   const deleteCard = async (id: number) => {
     try {
-        await axios.delete(`https://adminuc.up-it.uz/api/cards/${id}`);
+        await axios.delete(`/api/cards/${id}`);
         setChanger((prev) => !prev);
         toast({
             title: "Muvaffaqqiyatli",
