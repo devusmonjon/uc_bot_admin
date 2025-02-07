@@ -21,7 +21,7 @@ export default function Sidebar() {
   const pathname = usePathname()
 
   const handleLogout = async () => {
-    await signOut()
+    await signOut({callbackUrl: "/login"})
   }
 
   return (
