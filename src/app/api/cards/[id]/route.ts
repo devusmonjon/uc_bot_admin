@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: any }
 ) {
   try {
     const { id } = await params;
