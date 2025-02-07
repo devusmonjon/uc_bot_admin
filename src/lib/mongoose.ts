@@ -18,7 +18,7 @@ export const connectToDatabase = async () => {
       dbName: "uc_bot",
       autoCreate: true,
     };
-    await mongoose.connect("mongodb://localhost:27017/uc_bot", options);
+    await mongoose.connect("mongodb://localhost:27017", options);
     isConncected = true;
     console.log("MongoDB is connected");
   } catch (err) {
