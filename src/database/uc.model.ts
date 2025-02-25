@@ -7,11 +7,6 @@ const ucSchema = new mongoose.Schema(
       required: true,
       default: 0,
     },
-    image: {
-      type: String,
-      required: true,
-      default: null,
-    },
     price: {
       type: Number,
       required: true,
