@@ -277,7 +277,6 @@ export default function PubgSetsPage() {
                 className="col-span-3"
               />
             </div>
-          </div>
           <DialogFooter>
             <Button
               onClick={() => {
