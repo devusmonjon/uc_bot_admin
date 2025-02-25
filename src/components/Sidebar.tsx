@@ -5,15 +5,16 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { signOut } from "next-auth/react"
-import { CreditCard, Package, Settings, User, LogOut, Menu, Users } from "lucide-react"
+import { CreditCard, Package, Settings, User, LogOut, Menu, Users, Coins } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
   { href: "/cards", label: "Kartalar", icon: CreditCard },
   { href: "/pubg-sets", label: "PUBG To'plamlar", icon: Package },
+  { href: "/ucs", label: "UC'lar", icon: Coins },
   { href: "/bot-settings", label: "Bot Sozlamalari", icon: Settings },
   { href: "/profile", label: "Profil Sozlamalari", icon: User },
-  { href: "/users", label: "Profil Sozlamalari", icon: Users },
+  { href: "/users", label: "Foydalanuvchilarni Boshqarish", icon: Users },
 ]
 
 export default function Sidebar() {
