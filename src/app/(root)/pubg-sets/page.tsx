@@ -358,11 +358,12 @@ export default function PubgSetsPage() {
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
-                Nomi
+                Soni
               </Label>
               <Input
                 id="name"
                 value={newSet.name}
+                type="number"
                 onChange={(e) => setNewSet({ ...newSet, name: e.target.value })}
                 className="col-span-3"
               />
